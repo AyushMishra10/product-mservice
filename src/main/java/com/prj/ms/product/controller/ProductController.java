@@ -1,13 +1,15 @@
 package com.prj.ms.product.controller;
 
 import com.prj.ms.product.dto.ProductRequest;
-import com.prj.ms.product.model.Product;
+import com.prj.ms.product.dto.ProductResponse;
 import com.prj.ms.product.service.ProductService;
 
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -18,9 +20,15 @@ public class ProductController {
 
     @PutMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public Product createProduct(@RequestBody ProductRequest productRequest){
+    public ProductResponse createProduct(@RequestBody ProductRequest productRequest){
         //used dto classes here for decoupling
     	return productService.createProduct(productRequest);
     	
+    }
+
+    @GetMapping("/getProducts")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductResponse> getAllProducts(){
+        return productService.getAllProducts();
     }
 }
