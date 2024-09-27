@@ -9,7 +9,8 @@ import org.springframework.context.annotation.Import;
 class ProductServiceApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void contextLoads()  {
+		throw new UnsupportedOperationException("not implemented");
 	}
 
 }
