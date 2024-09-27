@@ -23,7 +23,6 @@ public class ProductController {
     public ProductResponse createProduct(@RequestBody ProductRequest productRequest){
         //used dto classes here for decoupling
     	return productService.createProduct(productRequest);
-    	
     }
 
     @GetMapping("/getProducts")
