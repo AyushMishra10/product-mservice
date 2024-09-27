@@ -18,7 +18,7 @@ public class ProductController {
 	
 	private final ProductService productService;
 
-    @PutMapping("/add")
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public ProductResponse createProduct(@RequestBody ProductRequest productRequest){
         //used dto classes here for decoupling
