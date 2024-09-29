@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/product")
 @RequiredArgsConstructor
 public class ProductController {
 	
@@ -21,7 +21,7 @@ public class ProductController {
     @PostMapping("/addProduct")
     @ResponseStatus(HttpStatus.CREATED)
     public ProductResponse createProduct(@RequestBody ProductRequest productRequest){
-        //used dto classes here for decoupling
+        //used DTO classes here for decoupling
     	return productService.createProduct(productRequest);
     }
 
